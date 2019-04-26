@@ -3,6 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 
 const app = express()
+const port = process.env.PORT || 8081
 
 const { geocode } = require('./utils/geocode')
 const { forecast } = require('./utils/forecast')
@@ -83,6 +84,6 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(8081, () => {
-  console.log('App is listening on localhost:8081')
+app.listen(port, () => {
+  console.log('App is listening on port' + port)
 })
